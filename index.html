@@ -8,18 +8,23 @@
 </head>
 <body>
   <div class="center-wrapper">
-    <div class="widget">
-      <h1>Writing Checklist</h1>
-      <div class="checklist-controls">
-        <input type="text" id="newItem" placeholder="Add a task...">
-        <button onclick="addItem()">Add</button>
-        <button onclick="clearAll()">Clear All</button>
+    <div class="widget" role="region" aria-labelledby="checklistHeading">
+      <h1 id="checklistHeading">Writing Checklist</h1>
+
+      <div class="checklist-controls" role="form" aria-labelledby="formHeading">
+        <h2 id="formHeading" class="visually-hidden">Add or clear checklist items</h2>
+
+        <label for="newItem" class="visually-hidden">New task</label>
+        <input type="text" id="newItem" placeholder="Add a task..." aria-label="New task to add to checklist">
+
+        <button onclick="addItem()" aria-label="Add task to checklist">Add</button>
+        <button onclick="clearAll()" aria-label="Clear all tasks from checklist">Clear All</button>
       </div>
-      <ul id="checklist"></ul>
+
+      <ul id="checklist" aria-label="Checklist of writing tasks"></ul>
     </div>
   </div>
 
   <script src="./script.js"></script>
 </body>
 </html>
-
